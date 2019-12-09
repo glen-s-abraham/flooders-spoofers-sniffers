@@ -1,7 +1,6 @@
 import scapy.all as scapy
 import re
-def ftpSniff(pkt):
-	
+def ftpSniff(pkt):	
 	if pkt.haslayer(scapy.TCP):
 		if pkt.getlayer(scapy.TCP).dport==21:
 			if not(pkt.getlayer(scapy.Raw)==None):
